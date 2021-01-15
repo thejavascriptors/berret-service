@@ -1,16 +1,23 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:4357/products', {useNewUrlParser: true});
+var mongoDB = 'mongodb://localhost/products'
 
-const productsSchema = new mongoose.Schema({
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB Connection Error'))
+
+const ProductsSchema = new mongoose.Schema({
   name: String,
   photoUrl: String,
   desc: String,
   rating: Number,
   review_count: {type: Number, default: 0},
-  price: Number
+  price: String
 });
 
-const Products = mongoose.model('products', productsSchema);
+const Products = mongoose.model('products', ProductsSchema);
 
-module.exports = Products;
+module.exports.Products = Products;
+module.exports.db = db;
