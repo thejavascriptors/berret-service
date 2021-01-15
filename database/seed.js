@@ -1,30 +1,32 @@
-import Products from './database'
-import faker from 'faker'
+const database = require('./database');
+const faker = require('faker');
+const Products = database.Products
+const db = database.db
 
+var createSeed = () => {
+  var products = []
 
-const seeds = {
-  name: faker.commerce.productName(),
-  photoUrl: faker.image.imageUrl(),
-  desc: faker.commerce.productDescription(),
-  rating: Math.ceil(Math.random() * 5),
-  review_count: Math.ceil(Math.random() * 3000),
-  price: faker.commerce.price(10, 200, 2, '$')
-}
-
-var seedData = (seed) => {
-  let data = [];
-  while (data.length < 100) {
-    data.push(seed)
+  for (var i = 0; i < 100; i++) {
+    const seeds = {
+      name: faker.commerce.productName(),
+      photoUrl: faker.image.imageUrl(640, 480, 'abstract', true, true),
+      desc: faker.commerce.productDescription(),
+      rating: Math.ceil(Math.random() * 5),
+      review_count: Math.ceil(Math.random() * 3000),
+      price: faker.commerce.price(10, 200, 2, '$')
+    }
+    products.push(seeds)
   }
-  return data
+  return products
 }
 
-var productSeeds = seedData(seeds)
+let productSeeds = createSeed()
 
 const buildDB = () => {
+  //debugger;
   Products.insertMany(productSeeds)
-  .catch((err) => {
-    console.log(err, 'seed failed')
+  .catch((error) => {
+    console.log(error)
   })
 }
 
