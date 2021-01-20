@@ -1,5 +1,5 @@
 {
-  "name": "Related-Products-Carousel",
+  "name": "related-products-carousel",
   "version": "1.0",
   "description": "Related Products Carousel Service for Congo-Prime",
   "author": "",
@@ -8,8 +8,11 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "resolutions": {
+    "styled-components": "^5.2.1"
+  },
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "",
     "dev:server": "nodemon --exec babel-node server --ignore public/",
     "dev:bundler": "webpack -w --mode=development",
@@ -22,26 +25,34 @@
     "@babel/preset-react": "^7.12.10",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "fetch": "^1.1.0",
     "install": "^0.13.0",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
     "path": "^0.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
     "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1"
   },
   "devDependencies": {
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
     "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
-    "react-test-renderer": "^17.0.1"
+    "react-test-renderer": "^17.0.1",
+    "style-loader": "^2.0.0"
   }
 }
