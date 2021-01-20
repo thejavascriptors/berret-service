@@ -1,0 +1,53 @@
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productdesc {
+  display: -webkit-box;
+  width: 8em;
+  /* height: 5em; */
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.productimage {
+  height: 10em;
+  width: 10em;
+  background-size: 100% 100%;
+}
+
+.product-name {
+  display: block;
+  width: 7em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.productrating {
+  display: flex;
+  justify-content: center;
+}
+
+.productreviewcount {
+  display: flex;
+  justify-content: center;
+}
+
+.prevbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

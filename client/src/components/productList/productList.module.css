@@ -1,0 +1,11 @@
+.productlist {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  flex-direction: row;
+}
+

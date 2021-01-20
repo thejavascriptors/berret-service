@@ -2,6 +2,7 @@ const path = require('path');
 
 const SRC_DIR = path.join(__dirname, 'client', 'src')
 const OUT_DIR = path.resolve(__dirname, 'public')
+// const CSS_DIR = path.join(__dirname, 'client', 'src', 'components', 'css')
 
 module.exports = {
   entry: path.join(SRC_DIR, 'index.js'),
@@ -21,6 +22,11 @@ module.exports = {
           },
         },
       },
+      {
+      test: /\.css$/i,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader"]
+      }
     ],
   },
   mode: 'development',

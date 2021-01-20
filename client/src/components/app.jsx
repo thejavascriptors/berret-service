@@ -1,5 +1,5 @@
 import React from 'react'
-import Products from './products.jsx'
+import Products from './productList/productList.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Product List</h1>
+        <h1>Related Products</h1>
         <Products products={this.state.products}/>
       </div>
     );
