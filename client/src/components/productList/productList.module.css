@@ -9,3 +9,26 @@
   flex-direction: row;
 }
 
+.prevbuttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prevbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextbuttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

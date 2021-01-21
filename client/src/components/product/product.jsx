@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './product.module.css'
+import Stars from '../stars/stars.jsx'
 
 
 var Product = ({product}) => {
@@ -9,8 +10,11 @@ var Product = ({product}) => {
       backgroundImage: `url(${product.photoUrl})`}}></div>
       <div className={styles.product-name}>{product.name}</div>
       <span className={styles.productdesc}>{product.desc}</span>
-      <div className={styles.productrating}>Rating: {product.rating}</div>
-      <div className={styles.productreviewcount}>Review Count: {product.review_count}</div>
+      <div className={styles.ratingcontainer}>
+        <span className={styles.productrating}><Stars rating={product.rating}/></span>
+        <span className={styles.productreviewcount}>&nbsp;{product.review_count}</span>
+      </div>
+      <div className={styles.productprice}>{product.price}</div>
     </div>
   )
 }
@@ -20,3 +24,4 @@ export default Product;
 
 //<img className="image" width="110" height="115" src={product.photoUrl}/>
 
+//Rating: {product.rating}
