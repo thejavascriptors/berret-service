@@ -10,6 +10,7 @@ db.on('error', console.error.bind(console, 'MongoDB Connection Error'))
 
 const ProductsSchema = new mongoose.Schema({
   name: String,
+  prodNum: Number,
   photoUrl: String,
   desc: String,
   rating: Number,

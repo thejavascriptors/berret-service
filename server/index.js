@@ -39,7 +39,7 @@ app.get('/relprod', (req, res) => {
 
 app.get('/relprod/prev/:id', (req, res) => {
   let id = req.params.id
-  Products.find({'_id': {'$lt': id}}).sort({'_id': -1}).limit(5).exec((err, docs) => {
+  Products.find({'prodNum': {'$gt': id}}).limit(5).exec((err, docs) => {
     if (err) {
       res.status(400).send(err)
     } else {
@@ -51,7 +51,7 @@ app.get('/relprod/prev/:id', (req, res) => {
 
 app.get('/relprod/next/:id', (req, res) => {
   let id = req.params.id
-  Products.find({'_id': {'$gt': id}}).limit(5).exec((err, docs) => {
+  Products.find({'prodNum': {'$gt': id}}).limit(5).exec((err, docs) => {
     if (err) {
       res.status(400).send(err)
     } else {

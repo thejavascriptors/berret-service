@@ -22,7 +22,7 @@ class App extends React.Component {
     .then((data) => {
       this.setState({
         products: data.docs,
-        lastId: data.docs[4]._id,
+        lastId: data.docs[4].prodNum,
         pages: data.total / 5
       })
     })
@@ -39,8 +39,8 @@ class App extends React.Component {
     .then((data) => {
       this.setState({
         products: data,
-        lastId: data[4]._id,
-        firstId: data[0]._id,
+        lastId: data[4].prodNum,
+        firstId: data[0].prodNum,
         page: that.state.page + 1
       })
     })
@@ -51,14 +51,14 @@ class App extends React.Component {
       return
     }
     let that = this
-    let id = this.state.firstId
+    let id = this.state.firstId - 6
     fetch(`http://localhost:4357/relprod/prev/${id}`)
     .then((response) => response.json())
     .then((data) => {
       this.setState({
-        products: data.reverse(),
-        lastId: data[4]._id,
-        firstId: data[0]._id,
+        products: data,
+        lastId: data[4].prodNum,
+        firstId: data[0].prodNum,
         page: that.state.page - 1
       })
     })
@@ -68,7 +68,7 @@ class App extends React.Component {
     return (
       <div>
         <div className={styles.titlecontainer}>
-          <h1 className={styles.title}>More to consider from our brands</h1>
+          <h1 className={styles.title}>Products related to this item</h1>
           <span className={styles.pages}>Page {this.state.page} of {this.state.pages}</span>
         </div>
         <Products products={this.state.products} next={this.nextPage} prev={this.prevPage}/>
