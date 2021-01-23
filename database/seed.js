@@ -26,7 +26,9 @@ let productSeeds = createSeed()
 const buildDB = () => {
   Products.insertMany(productSeeds)
   .then(() => {
-    db.Products.disconnect()
+    db.close(() => {
+      process.exit(0);
+   })
   })
   .catch((error) => {
     console.log(error)
