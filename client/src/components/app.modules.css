@@ -9,5 +9,9 @@
 }
 
 .pages {
+  display: flex;
+  font-family: Arial, sans-serif;
   justify-content: flex-end;
+  margin: 21.4px 0px 21.4px 0px;
+  padding: 3px
 }

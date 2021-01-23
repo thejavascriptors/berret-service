@@ -6,10 +6,10 @@ import Stars from '../stars/stars.jsx'
 var Product = ({product}) => {
   return (
     <div className={styles.product}>
-      <div className={styles.productimage} style={{
+      <div className={styles.productimage} src={'#'} style={{
       backgroundImage: `url(${product.photoUrl})`}}></div>
       {/* <div className={styles.product-name}>{product.name}</div> */}
-      <span className={styles.productdesc}>{product.desc}</span>
+      <span className={styles.productdesc}><a className={styles.a} href={'#'}>{product.desc}</a></span>
       <div className={styles.ratingcontainer}>
         <span className={styles.productrating}><Stars rating={product.rating}/></span>
         <span className={styles.productreviewcount}>&nbsp;&nbsp;{product.review_count}</span>
