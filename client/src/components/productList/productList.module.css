@@ -19,16 +19,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 6px 6px 6px 6px;
+  padding: 8px 15px 8px 15px;
 }
 
 .nextbuttoncontainer {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
+
 
 .nextbutton {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 6px 6px 6px 6px;
+  padding: 8px 15px 8px 15px;
 }

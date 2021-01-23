@@ -9,6 +9,7 @@ var createSeed = () => {
   for (var i = 0; i < 100; i++) {
     const seeds = {
       name: faker.commerce.productName(),
+      prodNum: i,
       photoUrl: faker.image.imageUrl(640, 480, 'abstract', true, true),
       desc: faker.commerce.productDescription(),
       rating: Math.ceil(Math.random() * 5),

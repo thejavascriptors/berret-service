@@ -33,6 +33,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fetch": "^1.1.0",
+    "file-loader": "^6.2.0",
     "install": "^0.13.0",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
@@ -40,6 +41,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
+    "url-loader": "^4.1.1",
     "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1"
   },
