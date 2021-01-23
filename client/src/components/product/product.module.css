@@ -40,14 +40,7 @@
   justify-content: center;
 }
 
-.prevbutton {
+.ratingcontainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.nextbutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

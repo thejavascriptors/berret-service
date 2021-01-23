@@ -6,7 +6,7 @@ var Products = ({products}) => {
   return (
     <div>
       <div className={styles.productlist}>
-      <button className="prev-button">Prev</button>
+      <div className={styles.prevbuttoncontainer}><button className={styles.prevbutton}>Prev</button></div>
       <div className={styles.products}>
           {products.slice(0, 5).map((product)  => {
             return (
@@ -14,8 +14,8 @@ var Products = ({products}) => {
             )
           })}
       </div>
-      <button className="next-button">Next</button>
-      </div><br/>
+      <div className={styles.nextbuttoncontainer}><button className={styles.nextbutton}>Next</button></div>
+      </div>
     </div>
   )
 }
