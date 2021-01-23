@@ -1,13 +1,16 @@
 .product {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 
 .productdesc {
   display: -webkit-box;
-  width: 8em;
+  font-family: 'AmazonEmber';
+  color: #007185;
+  font-size: 18px;
+  width: 160px;
   /* height: 5em; */
   overflow: hidden;
   white-space: normal;
@@ -32,15 +35,26 @@
 
 .productrating {
   display: flex;
-  justify-content: center;
+  /* align-items: flex-start; */
+  justify-content: left;
 }
 
 .productreviewcount {
   display: flex;
-  justify-content: center;
+  font-family: 'AmazonEmber';
+  font-size: 14px;
+  align-items: flex-start;
 }
 
 .ratingcontainer {
   display: flex;
-  justify-content: center;
+  width: 160px;
 }
+
+.productprice {
+  display: flex;
+  font-family: 'AmazonEmber';
+  width: 160px;
+  align-items: flex-start;
+}
+

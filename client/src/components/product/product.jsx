@@ -8,11 +8,11 @@ var Product = ({product}) => {
     <div className={styles.product}>
       <div className={styles.productimage} style={{
       backgroundImage: `url(${product.photoUrl})`}}></div>
-      <div className={styles.product-name}>{product.name}</div>
+      {/* <div className={styles.product-name}>{product.name}</div> */}
       <span className={styles.productdesc}>{product.desc}</span>
       <div className={styles.ratingcontainer}>
         <span className={styles.productrating}><Stars rating={product.rating}/></span>
-        <span className={styles.productreviewcount}>&nbsp;{product.review_count}</span>
+        <span className={styles.productreviewcount}>&nbsp;&nbsp;{product.review_count}</span>
       </div>
       <div className={styles.productprice}>{product.price}</div>
     </div>

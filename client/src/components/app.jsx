@@ -1,12 +1,19 @@
 import React from 'react'
 import Products from './productList/productList.jsx'
+import styles from './app.modules.css'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: []
+      products: [],
+      lastId: '0',
+      firstId: '0',
+      page: 1,
+      pages: 1
     }
+    this.nextPage = this.nextPage.bind(this)
+    this.prevPage = this.prevPage.bind(this)
   }
 
   componentDidMount() {
@@ -14,7 +21,45 @@ class App extends React.Component {
     .then((response) => response.json())
     .then((data) => {
       this.setState({
-        products: data
+        products: data.docs,
+        lastId: data.docs[4]._id,
+        pages: data.total / 5
+      })
+    })
+  }
+
+  nextPage() {
+    if(this.state.page === this.state.pages) {
+      return
+    }
+    let that = this
+    let id = this.state.lastId
+    fetch(`http://localhost:4357/relprod/next/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      this.setState({
+        products: data,
+        lastId: data[4]._id,
+        firstId: data[0]._id,
+        page: that.state.page + 1
+      })
+    })
+  }
+
+  prevPage() {
+    if(this.state.page === 1) {
+      return
+    }
+    let that = this
+    let id = this.state.firstId
+    fetch(`http://localhost:4357/relprod/prev/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      this.setState({
+        products: data.reverse(),
+        lastId: data[4]._id,
+        firstId: data[0]._id,
+        page: that.state.page - 1
       })
     })
   }
@@ -22,8 +67,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Related Products</h1>
-        <Products products={this.state.products}/>
+        <div className={styles.titlecontainer}>
+          <h1 className={styles.title}>More to consider from our brands</h1>
+          <span className={styles.pages}>Page {this.state.page} of {this.state.pages}</span>
+        </div>
+        <Products products={this.state.products} next={this.nextPage} prev={this.prevPage}/>
       </div>
     );
   }
