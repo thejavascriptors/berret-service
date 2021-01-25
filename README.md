@@ -36,19 +36,18 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 To start Development use the following commands.
 
-> To seed MongoDB:
-```sh
-npm run db:seed
-```
-> Start Server:
+Start Server:
 ```sh
 npm run dev:server
 ```
-> Start Webpack:
+Start Webpack:
 ```sh
 npm run dev:bundler
 ```
-
+After the server is up and running you can seed MongoDB:
+```sh
+npm run db:seed
+```
 ## Dependencies
 
 Run the following command to install dependancies

@@ -20,7 +20,6 @@ var Stars = ({rating}) => {
     return Array(emptyStars).fill(null).map((star, i) => {
       return <FontAwesomeIcon className="star" key={`es${i}`} icon={farStar} />
     })
-
   }
 
   return (

@@ -2,6 +2,6 @@ FROM node:slim
 WORKDIR /BERRET-SERVICE
 COPY . .
 RUN npm install --production
-RUN npm run db:seed
+EXPOSE 4357
 CMD ["node", "server/index.js"]
 
