@@ -23,7 +23,7 @@ class App extends React.Component {
       this.setState({
         products: data.docs,
         lastId: data.docs[4].prodNum,
-        pages: data.total / 5
+        pages: Math.ceil(data.total / 5)
       })
     })
   }
