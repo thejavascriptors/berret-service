@@ -1,0 +1,9 @@
+[2021-01-28 16:45:36.933] [sharedprocess] [info] main {"machineId":"c95d78a1813786e52f38040ac49c5dc0c2ba608d4ca50c8e062aabd51eeeb713","windowId":2}
+[2021-01-28 16:45:37.006] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/Users/badger/hackreactor/immersive/fec/berret-service/vscode/User/snippets'
+[2021-01-28 16:45:37.287] [sharedprocess] [info] Deleted from disk cweijan.vscode-mysql-client2 /Users/badger/.vscode/extensions/cweijan.vscode-mysql-client2-3.3.1
+[2021-01-28 16:45:37.287] [sharedprocess] [info] Deleted from disk cweijan.vscode-mysql-client2 /Users/badger/.vscode/extensions/cweijan.vscode-mysql-client2-3.2.6
+[2021-01-28 16:45:37.287] [sharedprocess] [info] Deleted from disk cweijan.vscode-mysql-client2 /Users/badger/.vscode/extensions/cweijan.vscode-mysql-client2-3.4.1
+[2021-01-28 16:45:37.287] [sharedprocess] [info] Deleted from disk cweijan.vscode-mysql-client2 /Users/badger/.vscode/extensions/cweijan.vscode-mysql-client2-3.2.1
+[2021-01-28 16:45:37.298] [sharedprocess] [info] Deleted from disk msjsdiag.debugger-for-chrome /Users/badger/.vscode/extensions/msjsdiag.debugger-for-chrome-4.12.11
+[2021-01-28 16:45:37.342] [sharedprocess] [info] Deleted from disk ms-vsliveshare.vsliveshare /Users/badger/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.3484
+[2021-01-28 16:46:16.955] [sharedprocess] [info] Starting to clean up unused language packs.

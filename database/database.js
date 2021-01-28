@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var mongoDB = 'mongodb://localhost/products'
+var mongoDB = 'mongodb://localhost/carousel'
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
