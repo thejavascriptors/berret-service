@@ -22,7 +22,7 @@ let seed = async () => {
       let rating = Math.floor(Math.random() * Math.floor(5));
       let review_count = Math.floor(Math.random() * Math.floor(3000));
       let price = Math.floor(Math.random() * Math.floor(1000));
-      let typeID = Math.floor(Math.random() * Math.floor(5));
+      let typeID = Math.floor(Math.random() * Math.floor(15));
       records.push([name,prodNum, photoUrl, desc, rating, review_count, price, typeID]);
     }
     csvWrite.writeRecords(records)
@@ -32,8 +32,8 @@ let seed = async () => {
       .catch( (err) => {
         console.log('error writing records from csv', err);
       })
-    start += end;
-    end += end;
+    start += 1000000;
+    end += 1000000;
     records = [];
   }
 }
@@ -83,5 +83,21 @@ seed();
 // seedTypeList();
 // type
 /*
-0: Electronics, 1: Toys, 2: Furniture, 3: Clothing, 4: Household Supplies
+0: Electronics, 1: Toys, 2: Furniture, 3: Clothing, 4: Household Supplies, 5: Kitchen, 6: Bathroom, 7: Stationary, 8: Sports, 9: Canned Goods, 10: Dry foods, 11: Drinks, 12: Silverware, 13: Party Supplies, 14: Camping, 15:
+
+CREATE TABLE IF NOT EXISTS products (
+    name VARCHAR (255),
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    photoURL VARCHAR (255),
+    descript VARCHAR (255),
+    rating INT,
+    review_count INT,
+    price INT,
+    typeID INT
+   );
+CREATE INDEX type_index ON products (typeid);
+
+
+
+
 */

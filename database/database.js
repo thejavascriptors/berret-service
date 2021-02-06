@@ -24,6 +24,16 @@ pool.readOne = ( prodId, callback ) => {
   })
 }
 
+pool.readAll = ( typeId, callback ) => {
+  pool.query(`select * from products where typeid=${typeId}`, (err, productData) => {
+    if(err){
+      callback(err, null);
+    } else {
+      callback(null, productData);
+    }
+  })
+}
+
 // pool.readAll = ( typeId, callback ) => {
 //   pool.query(`select * from products where id=${prodId}`, (err, productData) => {
 //     if(err){

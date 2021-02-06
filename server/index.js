@@ -33,4 +33,14 @@ app.get('/api/product/:id', (req,res) =>{
 })
 
 
-
+app.get('/api/product/related/:typeid', (req,res) =>{
+  let sendData = (err, data) => {
+    if(err){
+      console.log(err);
+    } else {
+      console.log(data.rows)
+      res.send(data.rows);
+    }
+  }
+  db.readAll(req.params.typeid, sendData);
+})
