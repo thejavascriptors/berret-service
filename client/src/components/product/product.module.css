@@ -1,0 +1,81 @@
+.product {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productdesc {
+  cursor: pointer;
+  display: -webkit-box;
+  font-family: 'AmazonEmber';
+  color: #007185;
+  font-size: 18px;
+  width: 160px;
+  /* height: 5em; */
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.productimage {
+  cursor: pointer;
+  height: 10em;
+  width: 10em;
+  background-size: 100% 100%;
+}
+
+.product-name {
+  display: block;
+  width: 7em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.productrating {
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: left;
+}
+
+.productreviewcount {
+  display: flex;
+  font-family: 'AmazonEmber';
+  font-size: 14px;
+  align-items: flex-start;
+}
+
+.ratingcontainer {
+  display: flex;
+  width: 160px;
+}
+
+.productprice {
+  color: #B12704;
+  display: flex;
+  font-family: 'AmazonEmber';
+  font-size: 18px;
+  font-weight: bold;
+  width: 160px;
+  align-items: flex-start;
+}
+
+.a {
+  color: #007185;
+  font-family: 'AmazonEmber';
+  text-decoration: none;
+}
+
+.a:hover {
+  text-decoration: underline;
+  color: #CC6600;
+}
+
+.a:active {
+  color: black;
+}
+
+

@@ -1,0 +1,40 @@
+.productlist {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  flex-direction: row;
+}
+
+.prevbuttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prevbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 6px 6px 6px;
+  padding: 8px 15px 8px 15px;
+}
+
+.nextbuttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.nextbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 6px 6px 6px;
+  padding: 8px 15px 8px 15px;
+}

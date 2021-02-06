@@ -1,0 +1,5 @@
+node_modules
+database/csvFolder/*
+database/*.csv
+*.csv
+database/**/*.csv

@@ -1,0 +1,17 @@
+.title {
+  font-family: AmazonEmber;
+  color: #CC6600;
+}
+
+.titlecontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pages {
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: flex-end;
+  margin: 21.4px 0px 21.4px 0px;
+  padding: 3px
+}
