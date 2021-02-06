@@ -11,7 +11,7 @@ let seed = async () => {
   // loop to 10 when ready
   for(let loop = 1; loop <= 10; loop++){
     const csvWrite = createCsvWriter({
-      header: ['name', 'id', 'photoURL', 'descript', 'rating', 'review_count', 'price'],
+      header: ['name', 'id', 'photoURL', 'descript', 'rating', 'review_count', 'price','typeid'],
       path: `./database/csvFolder/data${loop}.csv`
     })
     for(let i = start; i <= end; i++){
@@ -22,11 +22,12 @@ let seed = async () => {
       let rating = Math.floor(Math.random() * Math.floor(5));
       let review_count = Math.floor(Math.random() * Math.floor(3000));
       let price = Math.floor(Math.random() * Math.floor(1000));
-      records.push([name,prodNum, photoUrl, desc, rating, review_count, price]);
+      let typeID = Math.floor(Math.random() * Math.floor(5));
+      records.push([name,prodNum, photoUrl, desc, rating, review_count, price, typeID]);
     }
     csvWrite.writeRecords(records)
       .then( async () => {
-        await db.query(`COPY products("name", "id", "photourl", "descript", "rating", "review_count", "price") FROM '/Users/nathan/Desktop/ndw001_SDC/database/csvFolder/data${loop}.csv' DELIMITER ',' CSV HEADER;`)
+        await db.query(`COPY products("name", "id", "photourl", "descript", "rating", "review_count", "price", "typeid") FROM '/Users/nathan/Desktop/ndw001_SDC/database/csvFolder/data${loop}.csv' DELIMITER ',' CSV HEADER;`)
       })
       .catch( (err) => {
         console.log('error writing records from csv', err);
@@ -35,11 +36,52 @@ let seed = async () => {
     end += end;
     records = [];
   }
-  // query from csv into database // copy path to
 }
+
+
+// let seedTypeList = () => {
+//     //let start
+//   let start = 1;
+//   let end = 1000000;
+//   let records = [];
+//   // loop to 10 when ready
+//   for(let loop = 1; loop <= 10; loop++){
+//     const csvWrite = createCsvWriter({
+//       header: ['typeid', 'typename', 'productid'],
+//       path: `./database/csvFolder/typeList${loop}.csv`
+//     })
+//     for(let i = start; i <= end; i++){
+//       let typeID = Math.floor(Math.random() * Math.floor(5))
+//       let prodNum = i;
+//       let typeName = '';
+//       if(typeID===0){
+//         typeName = 'Electronics';
+//       } else if(typeID===1){
+//         typeName = 'Toys';
+//       } else if(typeID===2){
+//         typeName = 'Furniture';
+//       } else if(typeID===4){
+//         typeName = 'Household Supplies';
+//       } else if(typeID===3){
+//         typeName = 'Clothing';
+//       }
+//       records.push([typeID, prodNum, typeName]);
+//     }
+//     csvWrite.writeRecords(records)
+//       .then( async () => {
+//         await db.query(`COPY products("typeid", "typename", "productid") FROM '/Users/nathan/Desktop/ndw001_SDC/database/csvFolder/typeList${loop}.csv' DELIMITER ',' CSV HEADER;`)
+//       })
+//       .catch( (err) => {
+//         console.log('error writing records from csv', err);
+//       })
+//     start += end;
+//     end += end;
+//     records = [];
+//   }
+// }
 seed();
+// seedTypeList();
 // type
-let randomType = Math.floor(Math.random() * Math.floor(5));
 /*
-1: Electronics, 2: Toys, 3: Furniture, 4: Clothing, 5: Household Supplies
+0: Electronics, 1: Toys, 2: Furniture, 3: Clothing, 4: Household Supplies
 */
