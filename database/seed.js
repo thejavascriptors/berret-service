@@ -27,7 +27,7 @@ let seed = async () => {
     }
     csvWrite.writeRecords(records)
       .then( async () => {
-        await db.query(`COPY products("name", "id", "photourl", "descript", "rating", "review_count", "price", "typeid") FROM '/Users/nathan/Desktop/ndw001_SDC/database/csvFolder/data${loop}.csv' DELIMITER ',' CSV HEADER;`)
+        await db.query(`COPY products("name", "id", "photourl", "descript", "rating", "review_count", "price", "typeid") FROM '${__dirname}/csvFolder/data${loop}.csv' DELIMITER ',' CSV HEADER;`)
       })
       .catch( (err) => {
         console.log('error writing records from csv', err);
@@ -80,6 +80,9 @@ let seed = async () => {
 //   }
 // }
 seed();
+// console.log(__dirname);
+
+
 // seedTypeList();
 // type
 /*
