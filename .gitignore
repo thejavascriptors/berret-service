@@ -1,1 +1,8 @@
 node_modules
+database/csvFolder/*
+database/*.csv
+*.csv
+database/**/*.csv
+*.pem
+newrelic_agent.log
+newrelic.js
